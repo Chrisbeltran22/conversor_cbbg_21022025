@@ -7,14 +7,14 @@ self.addEventListener('install', event => {
             './',
             //'./index.html',
             './js/converter.js',
-            './css/style.css'
+            './css/style.css',
         ]);
-    }));
+    })());
 });
 
 self.addEventListener('fetch', event => {
-    event.respondWith((async () => {
-        const cache = await cache.open(CACHE_NAME);
+    event.respondsWith((async () => {
+        const cache = await caches.open(CACHE_NAME);
         const cachedResponse = await cache.match(event.request);
 
         if(cachedResponse){
