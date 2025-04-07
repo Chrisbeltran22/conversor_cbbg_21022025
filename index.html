@@ -6,7 +6,7 @@
     <meta name="keywords" content="calculo,matematico,conversor,temperatura,practica,investigacion,estudio,conversion"/>
     <meta name="autor" content="Christopher Bryan Beltran Gonzalez"/>
     <meta name="copyright" content="2025 CBBG"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
     <title>Conversor de temperatura Christopher Beltran</title>
     <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2"/>
     <link rel="stylesheet" href="css/style.css"/>
@@ -40,6 +40,18 @@
 
     <button class="btn btn1" onclick="recordVideo();" id="recording-button"><i class="fa fa-circle"></i></button>
     <video class="animate done" controls="true" id="video-element"></video>
+
+    <button class="btn btn1" onclick="Geolocalizacion();">Ver su ubicación</button>
+    <div><a id="ir_mapa" href=""></a></div>
+
+    <hr/>
+
+    <div>
+        <select name="listaDeDispositivos" id="listaDeDispositivos"></select>
+        <br>/>
+        <button id="btnComenzarGrabacion">Comenzar</button>
+        <button id="btnDeternerGrabacion">Detener</button>
+    </div>
 
     <script src="js/converter.js"></script>
     <script src="js/externals.js"></script>

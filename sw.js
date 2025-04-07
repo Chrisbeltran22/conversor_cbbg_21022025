@@ -13,7 +13,7 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
-    event.respondsWith((async () => {
+    event.respondWith((async () => {
         const cache = await caches.open(CACHE_NAME);
         const cachedResponse = await cache.match(event.request);
 
@@ -22,7 +22,7 @@ self.addEventListener('fetch', event => {
         } else {
             try{
                 const fetchResponse = await fetch(event.request);
-                cache.put(event.request, fetchResponse.close());
+                cache.put(event.request, fetchResponse.clone());
                 return fetchResponse;
             } catch (e){
                 //Hubo un problema de red de datos.
